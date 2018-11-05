@@ -19,8 +19,7 @@ ENV NODE_ENV production
 
 EXPOSE 80
 
-RUN npm run dist \
- && cp -r lib/* /var/www/html \
+RUN cp -r lib/* /var/www/html \
  && rm -rf /usr/src/app
 
 CMD ["nginx","-g","daemon off;"]
